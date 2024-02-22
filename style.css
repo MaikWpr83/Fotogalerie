@@ -1,0 +1,168 @@
+body{
+  margin: 0 auto;
+  height: 100%;
+  background: linear-gradient(rgba(191, 6, 248, 0.8), rgba(47, 12, 51, 0.9));
+}
+
+header{
+  display: flex;
+  align-items: center;
+  background-color: rgb(32, 33, 36);
+  height: 120px;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 7px 0px rgba(191, 192, 194, 0.8);
+}
+
+.imagebox{
+  width: 70%;
+  gap: 32px;
+}
+
+.imagebox img{
+  height: 90px;
+}
+
+#headline{
+  font-weight: bold;
+  font-size: 60px;
+  background: -webkit-linear-gradient(#d6d8da, #23538a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#imagecontent{
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(32, 33, 36, 0.2);
+  background-image: url("./img/logo.png");
+  background-blend-mode:darken;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+#imageblockcontainer{
+  display: none;
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+  top:0px;
+  left:0px;
+  gap:40px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  background-color: black;
+}
+
+.fotoalbum{
+  margin: 24px;
+  width: 600px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: rgb(48, 49, 52);
+  box-shadow: rgba(187, 187, 187, 0.8) 0px 12px 28px 0px,
+              rgba(101, 145, 180, 0.9) 0px 2px 4px 0px,
+              rgba(35, 83, 138, 0.3) 0px 0px 0px 1px inset;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(80%);
+}
+
+.fotoalbum:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: brightness(120%);
+}
+
+.icon{
+  height: 64px;
+
+}
+
+.icon:hover{
+  filter: drop-shadow(0px 0px 4px #ffffff);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.x{
+  height:48px;
+  width: 48px;
+}
+
+.openedPhoto{
+  width: 80%;
+  height: auto;
+  max-height: 80%;
+  aspect-ratio: 2 / 1;
+  border-radius: 16px;
+  box-shadow: rgba(187, 187, 187, 0.2) 0px 12px 28px 0px,
+              rgba(101, 145, 180, 0.7) 0px 2px 4px 0px,
+              rgba(35, 83, 138, 0.05) 0px 0px 0px 1px inset;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#iconcontainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap:39%;
+  height:80%;
+  max-height: 800px;
+}
+
+#hiddentoolbar{
+  display:none;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+
+@media (min-width: 2100px){
+  .imagebox, #imagecontent, #imageblockcontainer {
+    width: 2100px;
+  }
+}
+
+@media (max-width: 950px){
+  #headline, #iconcontainer, .arrow{
+    display: none;
+  }
+
+  #hiddentoolbar{
+    display:flex;
+  }
+
+  #imageblockcontainer{
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .openedPhoto{
+    aspect-ratio: 2 / 1;
+    height:auto;
+    width:95%;
+  }
+}
+
+@media (max-width: 630px){
+  .icon{
+    height: 32px;
+    width: 32px;
+  }
+
+  .fotoalbum{
+    aspect-ratio: 2 / 1;
+    width:100%;
+    height:auto;
+    margin:16px;
+  }
+}
